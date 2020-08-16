@@ -1,0 +1,36 @@
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+
+# Predict which one of your old customers will buy the new model of the car.
+dataset = pd.read_csv('Dataset/Social_Network_Ads.csv')
+x = dataset.iloc[:, :-1].values
+y = dataset.iloc[:, -1].values
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=0)
+
+print('Apply feature scaling to training set')
+sc = StandardScaler()
+x_train = sc.fit_transform(x_train)
+x_test = sc.transform(x_test)
+
+print(x_train)
+
+# Create a model for Logistic Regression
+classifier = LogisticRegression()
+classifier.fit(x_train, y_train)
+y_pred = classifier.predict(x_test)
+print("Prediction")
+print(y_pred)
+print("Actual")
+print(y_test)
+
+# Making the confusion matrix to see the accuracy
+print(confusion_matrix(y_test, y_pred))
+print(accuracy_score(y_test, y_pred))
+
+
+
