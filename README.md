@@ -22,7 +22,8 @@ We stage a likelihood of the person taking an offer.
 
 Linear Regression at least gives us the range  of people taking the offer. The line in between 1 and 0 makes sense but not the line above or below it.
 
-[image:8637B020-8009-456C-BF29-EA9E16351604-30485-00008A68ACCF8CD1/Screenshot 2020-08-12 at 5.59.41 PM.png]
+<img width="690" alt="Screenshot 2020-08-12 at 5 56 23 PM" src="https://user-images.githubusercontent.com/50817904/135798785-26dec48b-6d17-43e0-bd37-09ac0e04ac2d.png">
+
 
 
 We cut of the lines from top and below.
